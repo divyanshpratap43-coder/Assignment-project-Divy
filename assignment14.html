@@ -1,28 +1,119 @@
-<header>
-    <h1>Divyansh Pratap Singh</h1>
-</header>
+```html id="q14semantic"
+<!DOCTYPE html>
+<html lang="en">
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Semantic Improvement of the College Page – HTML &amp; CSS course assignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Improvement – Invertis University</title>
+</head>
 
-<main>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>BCA Artificial Intelligence student and aspiring software developer.</p>
-    </section>
+<body>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <article>
-            <h3>Dynamic Portfolio Website</h3>
-            <p>A portfolio website with MongoDB-backed contact functionality.</p>
-        </article>
-    </section>
-</main>
+  <!--
+    BEFORE:
+    Generic div elements were used for different parts of the page.
 
-<footer>
-    <p>© 2026 Divyansh Pratap Singh</p>
-</footer>
+    AFTER:
+    div.top     → <header>
+    div.menu    → <nav>
+    div.content → <main>
+    div.box     → <article>/<section>
+    div.side    → <aside>
+    div.bottom  → <footer>
+
+    Semantic HTML improves accessibility, SEO, and code readability.
+  -->
+
+  <header>
+
+    <h1>Invertis University</h1>
+
+    <nav aria-label="Page sections">
+      <a href="#college">College</a> |
+      <a href="#course">Course</a> |
+      <a href="#skills">Skills</a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <article id="college">
+
+      <h2>About the College</h2>
+
+      <p>
+        Divyansh Pratap Singh is pursuing a
+        <strong>BCA in Artificial Intelligence</strong>
+        at Invertis University, Bareilly, Uttar Pradesh.
+      </p>
+
+      <figure>
+        <img
+          src="https://picsum.photos/id/1067/500/260"
+          width="500"
+          height="260"
+          alt="Illustrative image representing a university campus">
+        <figcaption>University campus</figcaption>
+      </figure>
+
+    </article>
+
+    <article id="course">
+
+      <h2>BCA in Artificial Intelligence</h2>
+
+      <section>
+        <h3>Duration</h3>
+        <p>
+          <time datetime="2026">2026</time> –
+          <time datetime="2029">2029</time>
+        </p>
+      </section>
+
+      <section>
+        <h3>Relevant Coursework</h3>
+
+        <ul>
+          <li>Object-Oriented Programming</li>
+          <li>Data Structures and Algorithms</li>
+          <li>Database Management Systems</li>
+          <li>Operating Systems</li>
+          <li>Computer Networks</li>
+        </ul>
+
+      </section>
+
+    </article>
+
+    <aside id="skills">
+
+      <h2>Technical Skills</h2>
+
+      <p>
+        Java, JavaScript, HTML, CSS, React.js, Node.js,
+        Express.js, MongoDB, MySQL, Git, GitHub, and VS Code.
+      </p>
+
+    </aside>
+
+  </main>
+
+  <footer>
+
+    <p>
+      &copy; 2026 Divyansh Pratap Singh ·
+      <a href="mailto:divyanshpratap43@gmail.com">
+        divyanshpratap43@gmail.com
+      </a>
+    </p>
+
+  </footer>
+
+</body>
+
+</html>
+```

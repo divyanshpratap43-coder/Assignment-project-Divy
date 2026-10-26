@@ -1,2 +1,89 @@
-<img src="profile.jpg" alt="Portrait of Divyansh Pratap Singh">
-<img src="portfolio.jpg" alt="Screenshot of Divyansh's portfolio website">
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Portfolio with Accessible Images – HTML & CSS course assignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio with Accessible Images – Divyansh Pratap Singh</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Divyansh Pratap Singh – Portfolio</h1>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Profile</h2>
+
+      <!-- Meaningful alt text describes the image and its purpose -->
+      <img 
+        src="https://picsum.photos/id/1005/300/300"
+        width="150"
+        height="150"
+        alt="Portrait of Divyansh Pratap Singh, a BCA Artificial Intelligence student">
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <figure>
+        <img 
+          src="https://picsum.photos/id/180/400/250"
+          width="400"
+          height="250"
+          alt="Screenshot of Divyansh's dynamic portfolio website showing projects and skills">
+        <figcaption>Dynamic Portfolio Website</figcaption>
+      </figure>
+
+      <figure>
+        <img 
+          src="https://picsum.photos/id/119/400/250"
+          width="400"
+          height="250"
+          alt="Screenshot representing Divyansh's Number Guessing Game developed using Core Java">
+        <figcaption>Number Guessing Game</figcaption>
+      </figure>
+
+    </section>
+
+    <section>
+      <h2>Decorative Image</h2>
+
+      <!-- Purely decorative images should have an empty alt attribute -->
+      <img 
+        src="https://picsum.photos/id/1015/600/80"
+        width="600"
+        height="80"
+        alt="">
+    </section>
+
+    <section>
+      <h2>Linked Image</h2>
+
+      <a href="https://github.com/">
+        <img 
+          src="https://picsum.photos/id/60/120/120"
+          width="60"
+          height="60"
+          alt="Visit Divyansh Pratap Singh's GitHub profile">
+      </a>
+    </section>
+
+  </main>
+
+  <!--
+    ALT TEXT CHECKLIST
+
+    ✔ Describe what the image shows and why it matters.
+    ✔ Do not start with "image of..." because screen readers already announce it.
+    ✔ For linked images, describe the link destination.
+    ✔ Decorative images should use alt="".
+  -->
+
+</body>
+</html>
+```

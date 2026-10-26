@@ -1,33 +1,104 @@
-<form>
-    <label>Name:</label>
-    <input type="text" name="name">
+```html id="q16form"
+<!DOCTYPE html>
+<html lang="en">
 
-    <br><br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student registration form – HTML &amp; CSS course assignment">
+  <title>Student Registration – Divyansh Pratap Singh</title>
+</head>
 
-    <label>Email:</label>
-    <input type="email" name="email">
+<body>
 
-    <br><br>
+  <h1>Student Registration Form</h1>
 
-    <label>Password:</label>
-    <input type="password" name="password">
+  <form action="#" method="post">
 
-    <br><br>
+    <p>
+      <label for="name">Full Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Divyansh Pratap Singh">
+    </p>
 
-    <label>Gender:</label>
-    <input type="radio" name="gender" value="male"> Male
-    <input type="radio" name="gender" value="female"> Female
+    <p>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="divyanshpratap43@gmail.com">
+    </p>
 
-    <br><br>
+    <p>
+      <label for="phone">Phone:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{10}"
+        placeholder="10 digits">
+    </p>
 
-    <label>Course:</label>
-    <select>
+    <p>
+      <label for="pass">Password:</label>
+      <input
+        type="password"
+        id="pass"
+        name="password"
+        minlength="8"
+        required>
+    </p>
+
+    <fieldset>
+      <legend>Gender</legend>
+
+      <label>
+        <input type="radio" name="gender" value="male">
+        Male
+      </label>
+
+      <label>
+        <input type="radio" name="gender" value="female">
+        Female
+      </label>
+
+      <label>
+        <input type="radio" name="gender" value="other">
+        Other
+      </label>
+
+    </fieldset>
+
+    <p>
+      <label for="course">Course:</label>
+
+      <select id="course" name="course" required>
+        <option value="">-- Select --</option>
+        <option>BCA in Artificial Intelligence</option>
         <option>BCA</option>
-        <option>B.Tech</option>
-        <option>MCA</option>
-    </select>
+        <option>B.Sc IT</option>
+      </select>
+    </p>
 
-    <br><br>
+    <p>
+      <label>
+        <input type="checkbox" name="terms" required>
+        I agree to the terms and conditions
+      </label>
+    </p>
 
-    <input type="submit" value="Register">
-</form>
+    <button type="submit">Register</button>
+    <button type="reset">Clear</button>
+
+  </form>
+
+</body>
+
+</html>
+```

@@ -1,45 +1,158 @@
-<form>
-    <label>Full Name:</label>
-    <input type="text">
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-    <br><br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Job application form for a Front-End Developer position">
+  <title>Job Application – Divyansh Pratap Singh</title>
+</head>
 
-    <label>Email:</label>
-    <input type="email">
+<body>
 
-    <br><br>
+  <h1>Job Application – Front-End Developer</h1>
 
-    <label>Phone:</label>
-    <input type="tel">
+  <form action="#" method="post" enctype="multipart/form-data">
 
-    <br><br>
+    <fieldset>
+      <legend>Personal Details</legend>
 
-    <label>Date of Birth:</label>
-    <input type="date">
+      <p>
+        <label for="fn">Full Name:
+          <input type="text" id="fn" name="fullname"
+            value="Divyansh Pratap Singh" required>
+        </label>
+      </p>
 
-    <br><br>
+      <p>
+        <label for="em">Email:
+          <input type="email" id="em" name="email"
+            value="divyanshpratap43@gmail.com" required>
+        </label>
+      </p>
 
-    <label>Resume:</label>
-    <input type="file">
+      <p>
+        <label for="ph">Phone:
+          <input type="tel" id="ph" name="phone"
+            value="+91-9250372816">
+        </label>
+      </p>
 
-    <br><br>
+      <p>
+        <label for="dob">Date of Birth:
+          <input type="date" id="dob" name="dob">
+        </label>
+      </p>
 
-    <label>Experience:</label>
-    <input type="number">
+      <p>
+        <label for="web">Portfolio URL:
+          <input type="url" id="web" name="website"
+            placeholder="https://">
+        </label>
+      </p>
 
-    <br><br>
+      <p>
+        <label for="pw">Create Password:
+          <input type="password" id="pw" name="password"
+            minlength="8">
+        </label>
+      </p>
 
-    <label>Preferred Role:</label>
-    <input type="text">
+    </fieldset>
 
-    <br><br>
+    <fieldset>
+      <legend>Job Details</legend>
 
-    <label>Skills:</label>
-    <input type="checkbox"> Java
-    <input type="checkbox"> JavaScript
-    <input type="checkbox"> React.js
+      <p>
+        <label for="pos">Position:
+          <select id="pos" name="position">
+            <option>Front-End Developer</option>
+            <option>Web Developer</option>
+            <option>UI Designer</option>
+            <option>QA Tester</option>
+          </select>
+        </label>
+      </p>
 
-    <br><br>
+      <p>
+        <label for="join">Earliest Joining Date:
+          <input type="date" id="join" name="join">
+        </label>
+      </p>
 
-    <input type="submit" value="Apply">
-</form>
+      <p>
+        <label for="slot">Interview Slot:
+          <input type="datetime-local" id="slot" name="slot">
+        </label>
+      </p>
+
+      <p>
+        <label for="mo">Preferred Start Month:
+          <input type="month" id="mo" name="month">
+        </label>
+      </p>
+
+      <p>
+        <label for="wk">Preferred Week:
+          <input type="week" id="wk" name="week">
+        </label>
+      </p>
+
+      <p>
+        <label for="tm">Best Call Time:
+          <input type="time" id="tm" name="time">
+        </label>
+      </p>
+
+      <p>
+        <label for="exp">Years of Experience:
+          <input type="number" id="exp" name="exp"
+            min="0" max="40" value="0">
+        </label>
+      </p>
+
+      <p>
+        <label for="sal">Expected Salary (₹ LPA):
+          <input type="range" id="sal" name="salary"
+            min="2" max="30" value="6"
+            oninput="out.value=this.value">
+          <output id="out">6</output>
+        </label>
+      </p>
+
+      <p>
+        <label for="col">Favourite Colour:
+          <input type="color" id="col" name="colour"
+            value="#3366ff">
+        </label>
+      </p>
+
+      <p>
+        <label for="sk">Skills:
+          <input list="skills" id="sk" name="skill"
+            placeholder="Select or type a skill">
+        </label>
+
+        <datalist id="skills">
+          <option value="HTML">
+          <option value="CSS">
+          <option value="JavaScript">
+          <option value="Java">
+          <option value="React.js">
+          <option value="Node.js">
+          <option value="Express.js">
+          <option value="MongoDB">
+          <option value="MySQL">
+          <option value="Git">
+          <option value="GitHub">
+        </datalist>
+      </p>
+
+      <p>
+        <label for="s">Search Company Policy:
+          <input type="search" id="s" name="q">
+        </label>
+      </p>
+
+   

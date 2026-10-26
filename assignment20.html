@@ -1,4 +1,258 @@
-index.html       → Home
-about.html       → About Divyansh
-registration.html → Registration Form
-contact.html     → Contact Form
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Divyansh Pratap Singh's multi-page HTML project: Home, About, Registration and Contact.">
+
+  <meta name="author" content="Divyansh Pratap Singh">
+
+  <title>Multi-Page Project – Home</title>
+
+  <style>
+    .page {
+      display: none;
+    }
+
+    .page:target,
+    body:not(:has(.page:target)) #home {
+      display: block;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Divyansh Pratap Singh's Website</h1>
+
+    <nav aria-label="Main Navigation">
+      <a href="#home">Home</a> |
+      <a href="#about">About</a> |
+      <a href="#registration">Registration</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- Home Page -->
+    <section id="home" class="page">
+
+      <h2>Home</h2>
+
+      <p>
+        Welcome to my personal website. I am Divyansh Pratap Singh,
+        a BCA Artificial Intelligence student and aspiring software developer.
+      </p>
+
+      <img
+        src="portfolio.jpg"
+        width="600"
+        height="260"
+        alt="Screenshot of Divyansh Pratap Singh's portfolio website">
+
+      <h3>What You Can Find Here</h3>
+
+      <ul>
+        <li>Read <a href="#about">about me</a></li>
+        <li>View my <a href="#about">education and skills</a></li>
+        <li><a href="#registration">Register</a> for the workshop</li>
+        <li>Send a message through the <a href="#contact">contact page</a></li>
+      </ul>
+
+    </section>
+
+
+    <!-- About Page -->
+    <section id="about" class="page">
+
+      <h2>About Me</h2>
+
+      <p>
+        My name is Divyansh Pratap Singh. I am pursuing a
+        BCA in Artificial Intelligence at Invertis University,
+        Bareilly, Uttar Pradesh.
+      </p>
+
+      <table border="1" cellpadding="6">
+
+        <caption>Quick Facts</caption>
+
+        <tr>
+          <th scope="row">Name</th>
+          <td>Divyansh Pratap Singh</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Location</th>
+          <td>Mohammadi, Uttar Pradesh</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Course</th>
+          <td>BCA - Artificial Intelligence</td>
+        </tr>
+
+        <tr>
+          <th scope="row">University</th>
+          <td>Invertis University</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Skills</th>
+          <td>Java, JavaScript, HTML, CSS, React.js, Node.js, Express.js</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Interests</th>
+          <td>Software Development and Web Development</td>
+        </tr>
+
+      </table>
+
+      <h3>Projects</h3>
+
+      <ul>
+        <li>Dynamic Portfolio Website</li>
+        <li>Number Guessing Game - Core Java</li>
+      </ul>
+
+    </section>
+
+
+    <!-- Registration Page -->
+    <section id="registration" class="page">
+
+      <h2>Workshop Registration</h2>
+
+      <form action="#" method="post">
+
+        <p>
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Phone
+            <input type="tel" name="phone">
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Date of Birth
+            <input type="date" name="dob">
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Level
+            <select name="level">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </label>
+        </p>
+
+        <button type="submit">Register</button>
+
+      </form>
+
+    </section>
+
+
+    <!-- Contact Page -->
+    <section id="contact" class="page">
+
+      <h2>Contact</h2>
+
+      <form action="mailto:divyanshpratap43@gmail.com"
+        method="post"
+        enctype="text/plain">
+
+        <p>
+          <label>
+            Your Name
+            <input type="text" name="name" required>
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Your Email
+            <input type="email" name="email" required>
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Message
+            <br>
+            <textarea name="message" rows="5" cols="40" required></textarea>
+          </label>
+        </p>
+
+        <button type="submit">Send</button>
+
+      </form>
+
+      <address>
+        Email:
+        <a href="mailto:divyanshpratap43@gmail.com">
+          divyanshpratap43@gmail.com
+        </a>
+        <br>
+        Location: Mohammadi, Uttar Pradesh
+      </address>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <hr>
+
+    <p>
+      <small>
+        &copy; 2026 Divyansh Pratap Singh ·
+        <a href="#home">Back to Home</a>
+      </small>
+    </p>
+
+  </footer>
+
+</body>
+
+</html>
+```
