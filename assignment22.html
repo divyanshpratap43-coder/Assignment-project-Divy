@@ -1,19 +1,168 @@
-/* Element selector */
-p {
-    font-size: 16px;
-}
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-/* Class selector */
-.skill {
-    font-weight: bold;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demonstration of different CSS selector types.">
+  <title>CSS Selector Types</title>
 
-/* ID selector */
-#heading {
-    text-align: center;
-}
+  <style>
+    /* 1. Universal Selector */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Attribute selector */
-input[type="email"] {
-    border: 1px solid gray;
-}
+    /* 2. Element (Type) Selector */
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2f7;
+      color: #222;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #1d3557;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    /* 3. Class Selector */
+    .card {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .highlight {
+      background: #ffe066;
+      padding: 0 0.25rem;
+    }
+
+    /* 4. ID Selector */
+    #special {
+      border-left: 6px solid #e63946;
+    }
+
+    /* 5. Grouping Selector */
+    h2,
+    h3 {
+      color: #457b9d;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 6. Descendant Selector */
+    .card a {
+      color: #e63946;
+    }
+
+    /* 7. Child Selector */
+    ul > li {
+      margin-left: 1.5rem;
+    }
+
+    /* 8. Adjacent Sibling Selector */
+    h2 + p {
+      font-weight: bold;
+    }
+
+    /* 9. Attribute Selector */
+    a[target="_blank"]::after {
+      content: " ↗";
+    }
+
+    input[type="text"] {
+      padding: 0.4rem;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+
+    /* 10. Pseudo-Classes */
+    a:hover {
+      text-decoration: none;
+      background: #ffe066;
+    }
+
+    input:focus {
+      outline: 3px solid #a8dadc;
+    }
+
+    li:nth-child(odd) {
+      color: #1d3557;
+    }
+
+    /* 11. Pseudo-Element */
+    p::first-line {
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>CSS Selector Playground</h1>
+
+  <div class="card">
+
+    <h2>Class and Element Selectors</h2>
+
+    <p>
+      This paragraph is styled using the
+      <span class="highlight">class selector</span>.
+    </p>
+
+    <p>
+      This is a normal paragraph styled using the
+      element selector.
+    </p>
+
+  </div>
+
+  <div class="card" id="special">
+
+    <h3>ID Selector</h3>
+
+    <p>
+      This element uses the <strong>ID selector</strong> and has a
+      special red left border.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h3>Descendant, Child and Pseudo-Class Selectors</h3>
+
+    <ul>
+      <li>Odd item styled using <strong>:nth-child()</strong>.</li>
+      <li>Even item.</li>
+      <li>
+        Odd item with
+        <a href="https://developer.mozilla.org/"
+           target="_blank"
+           rel="noopener">
+          MDN
+        </a>
+        using an attribute selector.
+      </li>
+    </ul>
+
+    <p>
+      <input type="text" placeholder="Click here to demonstrate :focus">
+    </p>
+
+  </div>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,194 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Annotated CSS box model demonstration showing content, padding, border, and margin.">
+
+  <title>CSS Box Model – Annotated</title>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      line-height: 1.5;
+    }
+
+    /* The actual element being analysed */
+    .my-box {
+      width: 200px;
+      height: 80px;
+      /* Content: 200 × 80px */
+
+      padding: 20px;
+      /* Padding: 20px */
+
+      border: 10px solid #1d3557;
+      /* Border: 10px */
+
+      margin: 30px;
+      /* Margin: 30px */
+
+      background: #a8dadc;
+      /* Background fills content + padding */
+
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+    }
+
+    /* Visual representation of the four box-model layers */
+    .layer {
+      display: grid;
+      place-items: center;
+      position: relative;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .l-margin {
+      background: #f9cb9c;
+      padding: 36px;
+    }
+
+    .l-border {
+      background: #ffe599;
+      padding: 22px;
+    }
+
+    .l-padding {
+      background: #b6d7a8;
+      padding: 36px;
+    }
+
+    .l-content {
+      background: #9fc5e8;
+      padding: 28px 40px;
+    }
+
+    .tag {
+      position: absolute;
+      top: 3px;
+      left: 8px;
+      font-weight: bold;
+    }
+
+    .demo {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #999;
+      padding: 0.35rem 0.7rem;
+    }
+
+    code {
+      background: #eee;
+      padding: 0 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Box Model of <code>.my-box</code></h1>
+
+  <div class="demo">
+
+    <!-- Actual box -->
+    <div class="my-box">
+      Hello
+    </div>
+
+    <!-- Annotated box model diagram -->
+    <div class="layer l-margin">
+      <span class="tag">Margin: 30px</span>
+
+      <div class="layer l-border">
+        <span class="tag">Border: 10px</span>
+
+        <div class="layer l-padding">
+          <span class="tag">Padding: 20px</span>
+
+          <div class="layer l-content">
+            Content<br>
+            200 × 80px
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Calculation</h2>
+
+  <p>
+    The default value of <code>box-sizing</code> is
+    <code>content-box</code>.
+  </p>
+
+  <table>
+    <tr>
+      <th>Total Width</th>
+      <td>
+        200 + (20 × 2) + (10 × 2)
+        = <strong>260px</strong>
+        <br>
+        Including 60px margin = <strong>320px</strong>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Total Height</th>
+      <td>
+        80 + (20 × 2) + (10 × 2)
+        = <strong>140px</strong>
+        <br>
+        Including 60px margin = <strong>200px</strong>
+      </td>
+    </tr>
+  </table>
+
+  <h2>With <code>box-sizing: border-box</code></h2>
+
+  <p>
+    With <code>box-sizing: border-box</code>, the declared
+    <code>width: 200px</code> includes the padding and border.
+    Therefore, the overall box width remains <strong>200px</strong>,
+    while the content area becomes <strong>140px</strong> wide.
+  </p>
+
+  <p>
+    A common practice is to use:
+  </p>
+
+  <p>
+    <code>* { box-sizing: border-box; }</code>
+  </p>
+
+  <p>
+    <em>
+      Tip: Open DevTools (F12) → Elements → Computed to inspect
+      the box model of an element.
+    </em>
+  </p>
+
+</body>
+
+</html>
+```

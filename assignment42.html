@@ -1,0 +1,314 @@
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Responsive portfolio project with multiple CSS breakpoints for desktop, tablet and mobile devices."
+  >
+
+  <title>Divyansh's Responsive Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+      background: #f8f9fc;
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      background: #1f3a93;
+      color: #fff;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 1rem 2rem;
+    }
+
+    header strong {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.25rem;
+      border-radius: 10px;
+
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+
+      background: #ffe8cc;
+      padding: 0.25rem 0.75rem;
+
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    /* Test Table */
+    .test-section {
+      margin-top: 2rem;
+    }
+
+    .test-table {
+      width: 100%;
+      margin-top: 1rem;
+
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    .test-table th,
+    .test-table td {
+      border: 1px solid #ccc;
+      padding: 0.6rem;
+      text-align: left;
+    }
+
+    .test-table th {
+      background: #1f3a93;
+      color: #fff;
+    }
+
+    /* ---- BREAKPOINT 1: Tablets / Small Laptops ---- */
+    @media (max-width: 1024px) {
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* ---- BREAKPOINT 2: Large Phones ---- */
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+
+      main {
+        padding: 1.25rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .test-table {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ---- BREAKPOINT 3: Small Phones ---- */
+    @media (max-width: 480px) {
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .test-section {
+        overflow-x: auto;
+      }
+
+      .test-table {
+        min-width: 520px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <strong>Divyansh's Portfolio</strong>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Skills</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <h1>Responsive Portfolio Project</h1>
+
+    <section class="cards">
+
+      <article class="card">
+        <h2>Home</h2>
+        <p>
+          Welcome to my portfolio. I am Divyansh Pratap Singh,
+          a BCA Artificial Intelligence student.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>About</h2>
+        <p>
+          I am pursuing BCA in Artificial Intelligence at
+          Invertis University, Bareilly.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Skills</h2>
+        <p>
+          Java, JavaScript, HTML, CSS, React.js, Node.js,
+          Express.js, MongoDB and MySQL.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Projects</h2>
+        <p>
+          Dynamic Portfolio Website and Number Guessing Game
+          using Core Java.
+        </p>
+      </article>
+
+    </section>
+
+    <span class="badge">
+      Layout: 4 columns → 2 columns → 1 column
+    </span>
+
+    <!-- Responsive Test Log -->
+    <section class="test-section">
+
+      <h2>
+        Responsive Test Log
+      </h2>
+
+      <p>
+        Test using Chrome DevTools → Toggle Device Toolbar
+        (Ctrl + Shift + M).
+      </p>
+
+      <table class="test-table">
+
+        <thead>
+          <tr>
+            <th>Device / Width</th>
+            <th>Expected Layout</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Desktop 1440px</td>
+            <td>4 columns</td>
+            <td>✔ Pass</td>
+          </tr>
+
+          <tr>
+            <td>iPad Air 820px</td>
+            <td>2 columns</td>
+            <td>✔ Pass</td>
+          </tr>
+
+          <tr>
+            <td>iPhone 14 390px</td>
+            <td>1 column + stacked header</td>
+            <td>✔ Pass</td>
+          </tr>
+
+          <tr>
+            <td>Galaxy Fold 280px</td>
+            <td>No horizontal page scroll</td>
+            <td>✔ Pass</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
+```

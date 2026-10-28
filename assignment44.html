@@ -1,0 +1,404 @@
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Divyansh Pratap Singh – portfolio landing page with base desktop styles."
+    />
+
+    <title>Divyansh Pratap Singh – Portfolio</title>
+
+    <style>
+      /* ===== DESIGN TOKENS ===== */
+      :root {
+        --background: #f5f7fb;
+        --primary: #1e3a8a;
+        --secondary: #2563eb;
+        --accent: #f59e0b;
+        --text: #172033;
+        --white: #ffffff;
+        --muted: #64748b;
+        --radius: 14px;
+      }
+
+      /* ===== BASE ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        width: min(1150px, 92%);
+        margin-inline: auto;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--white);
+        padding: 0.8rem 1.8rem;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      /* ===== HEADER / NAVIGATION ===== */
+      .site-header {
+        padding-block: 1rem;
+        background: var(--white);
+      }
+
+      .site-header .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .site-nav ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .site-nav a:hover {
+        color: var(--secondary);
+      }
+
+      /* ===== HERO ===== */
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding-block: 4rem;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .hero p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        color: var(--muted);
+      }
+
+      .hero img {
+        border-radius: var(--radius);
+        height: 420px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      /* ===== SKILLS ===== */
+      .skills {
+        padding-block: 4rem;
+        background: var(--white);
+      }
+
+      .skills__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .skill-card {
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        background: var(--background);
+        border: 1px solid #e2e8f0;
+      }
+
+      .skill-card h3 {
+        margin-bottom: 0.75rem;
+        color: var(--primary);
+      }
+
+      .skill-card p {
+        color: var(--muted);
+      }
+
+      /* ===== ABOUT ===== */
+      .about {
+        padding-block: 4rem;
+      }
+
+      .about .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about img {
+        border-radius: var(--radius);
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+      }
+
+      .about h2 {
+        text-align: left;
+      }
+
+      .about p {
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+
+      /* ===== PROJECTS ===== */
+      .projects {
+        padding-block: 4rem;
+        background: var(--white);
+      }
+
+      .projects__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .project {
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        background: var(--background);
+        border: 1px solid #e2e8f0;
+      }
+
+      .project h3 {
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .project p {
+        color: var(--muted);
+      }
+
+      /* ===== CONTACT / FOOTER ===== */
+      .contact {
+        background: var(--primary);
+        color: var(--white);
+        padding-block: 3rem;
+        text-align: center;
+      }
+
+      .contact .btn {
+        margin-top: 1rem;
+      }
+
+      .site-footer {
+        padding-block: 1.5rem;
+        background: var(--white);
+      }
+
+      .site-footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="#">Divyansh's Portfolio</a>
+
+        <nav class="site-nav" aria-label="Main Navigation">
+          <ul>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ===== HERO ===== -->
+      <section class="hero">
+        <div class="wrap">
+          <div>
+            <h1>Build. Learn. Create.</h1>
+
+            <p>
+              I am Divyansh Pratap Singh, a BCA Artificial Intelligence
+              student at Invertis University, Bareilly, with an interest in
+              software development, web development and problem solving.
+            </p>
+
+            <a class="btn" href="#projects">View My Projects</a>
+          </div>
+
+          <img
+            src="https://picsum.photos/id/180/800/600"
+            alt="Laptop workspace representing software development"
+          />
+        </div>
+      </section>
+
+      <!-- ===== SKILLS ===== -->
+      <section class="skills" id="skills">
+        <div class="wrap">
+          <h2>Technical Skills</h2>
+
+          <div class="skills__grid">
+
+            <article class="skill-card">
+              <h3>Programming</h3>
+              <p>
+                Java, JavaScript, Data Structures and Algorithms,
+                Object-Oriented Programming.
+              </p>
+            </article>
+
+            <article class="skill-card">
+              <h3>Web Development</h3>
+              <p>
+                HTML, CSS, React.js, Node.js, Express.js and REST APIs.
+              </p>
+            </article>
+
+            <article class="skill-card">
+              <h3>Database & Tools</h3>
+              <p>
+                MongoDB, MySQL, Git, GitHub and Visual Studio Code.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section class="about" id="about">
+        <div class="wrap">
+
+          <img
+            src="https://picsum.photos/id/1/700/500"
+            alt="Developer working on a computer"
+          />
+
+          <div>
+            <h2>About Me</h2>
+
+            <p>
+              My name is Divyansh Pratap Singh and I am pursuing a
+              Bachelor of Computer Applications in Artificial Intelligence
+              at Invertis University, Bareilly, Uttar Pradesh.
+            </p>
+
+            <p>
+              I have a strong interest in software development and
+              problem solving. I am also learning the MERN stack and
+              improving my skills in web development and DSA using Java.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== PROJECTS ===== -->
+      <section class="projects" id="projects">
+        <div class="wrap">
+
+          <h2>My Projects</h2>
+
+          <div class="projects__grid">
+
+            <article class="project">
+              <h3>Dynamic Portfolio Website</h3>
+
+              <p>
+                A dynamic portfolio website with a MongoDB-connected
+                contact form, admin panel and backend data rendering.
+              </p>
+            </article>
+
+            <article class="project">
+              <h3>Number Guessing Game</h3>
+
+              <p>
+                A Core Java project that generates a random number,
+                accepts user guesses and tracks the number of attempts.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section class="contact" id="contact">
+        <div class="wrap">
+
+          <h2>Let's Connect</h2>
+
+          <p>
+            Interested in software development, web development and
+            learning new technologies.
+          </p>
+
+          <a
+            class="btn"
+            href="mailto:divyanshpratap43@gmail.com"
+          >
+            Contact Me
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>&copy; 2026 Divyansh Pratap Singh</span>
+        <span>BCA Artificial Intelligence Student</span>
+      </div>
+    </footer>
+
+  </body>
+</html>
+```

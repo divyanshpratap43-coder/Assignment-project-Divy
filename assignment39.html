@@ -1,0 +1,294 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Responsive developer product grid with header, sidebar and CSS Grid layout.">
+
+  <title>Developer Store – Header, Sidebar & Product Grid</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f6f7fb;
+      color: #222;
+    }
+
+    /* Main page layout using named grid areas */
+    .page {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      grid-area: header;
+      background: #14213d;
+      color: #fff;
+      padding: 1rem 1.5rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header strong {
+      font-size: 1.3rem;
+    }
+
+    header input {
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      border: 0;
+      width: min(260px, 40vw);
+    }
+
+    /* Sidebar */
+    aside {
+      grid-area: sidebar;
+      background: #fff;
+      padding: 1.5rem;
+      border-right: 1px solid #ddd;
+    }
+
+    aside h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    aside li {
+      padding: 0.4rem 0;
+      color: #444;
+    }
+
+    /* Main content */
+    main {
+      grid-area: main;
+      padding: 1.5rem;
+    }
+
+    main > h1 {
+      margin-bottom: 1rem;
+    }
+
+    /* Responsive product grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Product card */
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .product img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      font-size: 1rem;
+      margin: 0.6rem 0 0.2rem;
+    }
+
+    .product p {
+      color: #0a8754;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      grid-area: footer;
+      background: #14213d;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 720px) {
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main"
+          "footer";
+      }
+
+      aside {
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      header input {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 450px) {
+      main {
+        padding: 1rem;
+      }
+
+      aside {
+        padding: 1rem;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header>
+      <strong>Divyansh's Tech Store</strong>
+
+      <input
+        type="search"
+        placeholder="Search developer products"
+        aria-label="Search developer products"
+      >
+    </header>
+
+    <!-- Sidebar -->
+    <aside>
+      <h2>Categories</h2>
+
+      <ul>
+        <li>Programming</li>
+        <li>Web Development</li>
+        <li>Computer Accessories</li>
+        <li>Developer Tools</li>
+      </ul>
+
+      <h2>Price</h2>
+
+      <ul>
+        <li>Under ₹1,000</li>
+        <li>₹1,000 – ₹5,000</li>
+        <li>Above ₹5,000</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+
+      <h1>Developer Products</h1>
+
+      <div class="products">
+
+        <article class="product">
+          <img
+            src="https://picsum.photos/id/0/300/300"
+            alt="Laptop used for software development"
+          >
+          <h3>Developer Laptop</h3>
+          <p>₹54,999</p>
+        </article>
+
+        <article class="product">
+          <img
+            src="https://picsum.photos/id/1/300/300"
+            alt="Computer keyboard for programming"
+          >
+          <h3>Mechanical Keyboard</h3>
+          <p>₹3,499</p>
+        </article>
+
+        <article class="product">
+          <img
+            src="https://picsum.photos/id/2/300/300"
+            alt="Computer monitor for development work"
+          >
+          <h3>Programming Monitor</h3>
+          <p>₹12,999</p>
+        </article>
+
+        <article class="product">
+          <img
+            src="https://picsum.photos/id/3/300/300"
+            alt="Developer workstation desk"
+          >
+          <h3>Developer Desk</h3>
+          <p>₹7,499</p>
+        </article>
+
+        <article class="product">
+          <img
+            src="https://picsum.photos/id/4/300/300"
+            alt="USB-C hub for laptop connectivity"
+          >
+          <h3>USB-C Hub</h3>
+          <p>₹1,299</p>
+        </article>
+
+        <article class="product">
+          <img
+            src="https://picsum.photos/id/6/300/300"
+            alt="Wireless headphones for developers"
+          >
+          <h3>Wireless Headphones</h3>
+          <p>₹2,499</p>
+        </article>
+
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2026 Divyansh Pratap Singh | BCA Artificial Intelligence
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
+```

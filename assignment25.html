@@ -1,0 +1,357 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Styled multi-page portfolio project of Divyansh Pratap Singh.">
+
+  <title>Divyansh's Portfolio – Styled Multi-Page Project</title>
+
+  <style>
+    :root {
+      --primary: #1f3a93;
+      --accent: #f4a261;
+      --bg: #f8f9fc;
+      --text: #222;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid var(--accent);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    .page {
+      display: none;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .page:target,
+    body:not(:has(.page:target)) #home {
+      display: block;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font: inherit;
+    }
+
+    button {
+      background: var(--accent);
+      border: 0;
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(0.92);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+    }
+
+    th {
+      background: #eef1fb;
+      text-align: left;
+    }
+
+    .note {
+      background: #fff8ec;
+      border-left: 5px solid var(--accent);
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <h1>Divyansh's Portfolio</h1>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#register">Register</a>
+      <a href="#contact">Contact</a>
+      <a href="#design">Design Note</a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- Home Page -->
+    <section id="home" class="page">
+
+      <h2>Home</h2>
+
+      <p>
+        Welcome to the styled multi-page portfolio project of
+        <strong>Divyansh Pratap Singh</strong>.
+      </p>
+
+      <p>
+        I am pursuing a BCA in Artificial Intelligence and building my
+        foundation in software development, web development, and the MERN stack.
+      </p>
+
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page">
+
+      <h2>About</h2>
+
+      <table>
+
+        <tr>
+          <th>Name</th>
+          <td>Divyansh Pratap Singh</td>
+        </tr>
+
+        <tr>
+          <th>Location</th>
+          <td>Mohammadi, Uttar Pradesh</td>
+        </tr>
+
+        <tr>
+          <th>Course</th>
+          <td>BCA in Artificial Intelligence</td>
+        </tr>
+
+        <tr>
+          <th>University</th>
+          <td>Invertis University, Bareilly</td>
+        </tr>
+
+        <tr>
+          <th>Skills</th>
+          <td>Java, JavaScript, HTML, CSS, React.js, Node.js, Express.js</td>
+        </tr>
+
+      </table>
+
+    </section>
+
+    <!-- Registration Page -->
+    <section id="register" class="page">
+
+      <h2>Registration</h2>
+
+      <form action="#" method="post">
+
+        <label for="name">
+          Name
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required>
+        </label>
+
+        <label for="email">
+          Email
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required>
+        </label>
+
+        <label for="course">
+          Course
+
+          <select id="course" name="course" required>
+            <option value="">-- Select Course --</option>
+            <option value="bca-ai">BCA in Artificial Intelligence</option>
+            <option value="bca">BCA</option>
+            <option value="bsc-it">B.Sc IT</option>
+          </select>
+
+        </label>
+
+        <button type="submit">Register</button>
+
+      </form>
+
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page">
+
+      <h2>Contact</h2>
+
+      <p>
+        Email:
+        <a href="mailto:divyanshpratap43@gmail.com">
+          divyanshpratap43@gmail.com
+        </a>
+      </p>
+
+      <p>
+        Phone: +91-9250372816
+      </p>
+
+      <form action="#" method="post">
+
+        <label for="contact-name">
+          Name
+          <input
+            type="text"
+            id="contact-name"
+            name="name"
+            placeholder="Enter your name"
+            required>
+        </label>
+
+        <label for="message">
+          Message
+
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Enter your message"
+            required></textarea>
+
+        </label>
+
+        <button type="submit">Send</button>
+
+      </form>
+
+    </section>
+
+    <!-- Design Note Page -->
+    <section id="design" class="page">
+
+      <h2>Design Choices</h2>
+
+      <div class="note">
+
+        <p>
+          <strong>Colour:</strong>
+          Deep blue is used as the primary colour to create a professional
+          appearance, while orange is used as an accent for important actions.
+        </p>
+
+        <p>
+          <strong>Typography:</strong>
+          A system font stack is used for fast loading and good readability.
+          A line-height of 1.6 makes paragraphs comfortable to read.
+        </p>
+
+        <p>
+          <strong>Layout:</strong>
+          The content width is limited to 800px so that text remains easy to
+          read. White content cards are placed over a light background to
+          create visual separation.
+        </p>
+
+        <p>
+          <strong>Maintainability:</strong>
+          Colours are stored in CSS custom properties, allowing the theme to
+          be changed easily from one place.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <small>
+      &copy; 2026 Divyansh Pratap Singh
+    </small>
+  </footer>
+
+</body>
+
+</html>
+```

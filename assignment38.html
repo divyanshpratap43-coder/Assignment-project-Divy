@@ -1,0 +1,309 @@
+```html id="8frsdf"
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Developer dashboard layout created using CSS Grid named areas.">
+
+  <title>Developer Dashboard – Named Grid Areas</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #e9ecf3;
+      color: #222;
+    }
+
+    /* Main Dashboard Grid */
+    .dashboard {
+      display: grid;
+      min-height: 100vh;
+
+      grid-template-columns: 220px 1fr 1fr 1fr;
+
+      grid-template-rows:
+        64px
+        auto
+        1fr
+        48px;
+
+      /*
+        Named Grid Areas
+      */
+      grid-template-areas:
+        "header  header  header  header"
+        "sidebar stat1   stat2   stat3"
+        "sidebar chart   chart   activity"
+        "footer  footer  footer  footer";
+
+      gap: 1rem;
+    }
+
+    .dashboard > * {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    /* Header */
+    .header {
+      grid-area: header;
+
+      background: #1f2a44;
+      color: #fff;
+
+      border-radius: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header strong {
+      font-size: 1.2rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+
+      background: #2b3a67;
+      color: #fff;
+
+      border-radius: 0 10px 10px 0;
+    }
+
+    .sidebar h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* Statistics */
+    .stat1 {
+      grid-area: stat1;
+    }
+
+    .stat2 {
+      grid-area: stat2;
+    }
+
+    .stat3 {
+      grid-area: stat3;
+    }
+
+    .stat span {
+      color: #666;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      color: #2b3a67;
+      margin-top: 0.25rem;
+    }
+
+    /* Chart */
+    .chart {
+      grid-area: chart;
+    }
+
+    .chart h2,
+    .activity h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+
+      height: 160px;
+      margin-top: 1rem;
+    }
+
+    .bars span {
+      flex: 1;
+
+      background: linear-gradient(#5c7cfa, #3b5bdb);
+
+      border-radius: 4px 4px 0 0;
+    }
+
+    /* Activity */
+    .activity {
+      grid-area: activity;
+    }
+
+    .activity ul {
+      padding-left: 1.2rem;
+    }
+
+    .activity li {
+      margin: 0.6rem 0;
+    }
+
+    /* Footer */
+    .footer {
+      grid-area: footer;
+
+      border-radius: 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* Responsive Dashboard */
+    @media (max-width: 800px) {
+
+      .dashboard {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: auto;
+
+        grid-template-areas:
+          "header header"
+          "stat1 stat2"
+          "stat3 stat3"
+          "chart chart"
+          "activity activity"
+          "sidebar sidebar"
+          "footer footer";
+      }
+
+      .sidebar {
+        border-radius: 10px;
+      }
+    }
+
+    /* Small Mobile Screens */
+    @media (max-width: 500px) {
+
+      .dashboard {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+          "header"
+          "stat1"
+          "stat2"
+          "stat3"
+          "chart"
+          "activity"
+          "sidebar"
+          "footer";
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="dashboard">
+
+    <!-- Header -->
+    <header class="header">
+      <strong>Developer Dashboard</strong>
+      <span>Hello, Divyansh</span>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <h2>Navigation</h2>
+
+      <ul>
+        <li>📊 Overview</li>
+        <li>💻 Skills</li>
+        <li>📁 Projects</li>
+        <li>🧩 DSA</li>
+        <li>⚙️ Settings</li>
+      </ul>
+
+    </aside>
+
+    <!-- Statistics -->
+    <section class="stat stat1">
+      <span>Projects</span>
+      <strong>2</strong>
+    </section>
+
+    <section class="stat stat2">
+      <span>Degree</span>
+      <strong>BCA</strong>
+    </section>
+
+    <section class="stat stat3">
+      <span>Learning</span>
+      <strong>MERN</strong>
+    </section>
+
+    <!-- Chart -->
+    <section class="chart">
+
+      <h2>Learning Progress</h2>
+
+      <div
+        class="bars"
+        aria-label="Learning progress visualization"
+        role="img">
+
+        <span style="height: 40%;" title="Java"></span>
+        <span style="height: 60%;" title="JavaScript"></span>
+        <span style="height: 70%;" title="HTML and CSS"></span>
+        <span style="height: 65%;" title="React.js"></span>
+        <span style="height: 55%;" title="Node.js"></span>
+        <span style="height: 50%;" title="MongoDB"></span>
+        <span style="height: 75%;" title="DSA"></span>
+
+      </div>
+
+    </section>
+
+    <!-- Activity -->
+    <section class="activity">
+
+      <h2>Recent Activities</h2>
+
+      <ul>
+        <li>Worked on Dynamic Portfolio Website</li>
+        <li>Practiced DSA in Java</li>
+        <li>Learning MERN stack</li>
+      </ul>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      &copy; 2026 Divyansh Pratap Singh
+    </footer>
+
+  </main>
+
+</body>
+
+</html>
+```
